@@ -1,0 +1,29 @@
+//Main stylesheet.
+//Variables and functions.
+@import 'functions';
+@import 'vars';
+
+//Core imports.
+@import 'bootstrap-reboot';
+@import 'bootstrap-grid';
+@import 'swiper';
+@import 'buttons';
+@import 'accordion';
+@import 'form';
+@import 'pricing';
+
+//C10 Custom
+@import 'generic';
+
+@import 'header';
+@import 'footer';
+
+// Sections
+@import 'blog';
+@import 'section-features';
+@import 'section-image-content-green';
+@import 'section-header-image-content';
+@import 'section-social-block';
+@import 'navbar';
+@import 'slide-menu';
+@import 'trustpilot';

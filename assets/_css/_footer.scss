@@ -1,0 +1,10 @@
+.site-footer{
+    background-color: #25273E;
+}
+.footer-blocks{
+    justify-content: space-between;
+    @media only screen and (max-width: 720px) {
+        flex-direction: column;
+        text-align: center;
+    }
+}

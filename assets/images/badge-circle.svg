@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="193.086" height="193.086" viewBox="0 0 193.086 193.086">
+  <defs>
+    <filter id="Ellipse_35" x="0" y="0" width="193.086" height="193.086" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feFlood flood-color="#d1da47"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_119" data-name="Group 119" transform="translate(-1001.551 -761.381) rotate(25)">
+    <g id="Group_956" data-name="Group 956">
+      <g transform="matrix(0.91, -0.42, 0.42, 0.91, 1229.49, 266.77)" filter="url(#Ellipse_35)">
+        <circle id="Ellipse_35-2" data-name="Ellipse 35" cx="63.5" cy="63.5" r="63.5" transform="translate(53.01 18) rotate(16)" fill="#d1da47"/>
+      </g>
+      <text id="O2_s_largest_UK_channel_partner" data-name="O2’s largest 
+UK channel 
+partner" transform="matrix(0.988, -0.156, 0.156, 0.988, 1358.438, 305.576)" fill="#171a32" font-size="16" font-family="Rubik-Medium, Rubik" font-weight="500"><tspan x="-47.304" y="0">O2’s largest </tspan><tspan x="-45.256" y="19">UK channel </tspan><tspan x="-29.192" y="38">partner</tspan></text>
+    </g>
+  </g>
+</svg>

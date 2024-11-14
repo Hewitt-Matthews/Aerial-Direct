@@ -1,0 +1,31 @@
+.blog-item {
+  border-radius: 10px;
+
+  img {
+    max-height: 230px;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .blog-button-wrap {
+    margin-top: auto;
+  }
+}
+.case-study-item{
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
+
+  }
+}
+.bg-gradient-bottom{
+  background: transparent linear-gradient(178deg, #171A32 0%, #448859 100%) 0% 0% no-repeat padding-box;
+}
+
+nav.navigation.post-nav-wrap {
+    padding-bottom: 60px;
+}

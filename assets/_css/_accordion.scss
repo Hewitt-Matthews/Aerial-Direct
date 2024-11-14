@@ -1,0 +1,24 @@
+.accordion-wrapper{
+    border-radius: 10px;
+}
+.accordion {
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  border-radius: 10px;
+  outline: none;
+  transition: 0.4s;
+  background-color: #292c42;
+  color: $white;
+  
+}
+
+.panel {
+    border-radius: 0 0 10px 10px;
+  padding: 0 18px;
+  display: none;
+  background-color: #3c3f53;
+  overflow: hidden;
+}

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="37.989" height="22.935" viewBox="0 0 37.989 22.935">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.375" y1="-0.112" x2="0.667" y2="1.145" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#d1da47"/>
+      <stop offset="1" stop-color="#171a32"/>
+    </linearGradient>
+  </defs>
+  <g id="laptop_1_" data-name="laptop (1)" transform="translate(0 -635.466)">
+    <path id="Path_21871" data-name="Path 21871" d="M39.849,635.466H69.339a1.188,1.188,0,0,1,1.19,1.19v18.769a1.188,1.188,0,0,1-1.19,1.19H39.849a1.188,1.188,0,0,1-1.19-1.19V636.656A1.188,1.188,0,0,1,39.849,635.466Z" transform="translate(-35.599)" fill="#25273e"/>
+    <path id="Path_21872" data-name="Path 21872" d="M55.144,651.079H84.4v18.678H55.144Z" transform="translate(-50.78 -14.377)" fill="url(#linear-gradient)"/>
+    <path id="Path_21873" data-name="Path 21873" d="M0,902.7a1.892,1.892,0,0,0,1.989,1.785H36a1.892,1.892,0,0,0,1.989-1.785Z" transform="translate(0 -246.08)" fill="#f3f4f6"/>
+    <path id="Path_21874" data-name="Path 21874" d="M208.089,902.7c0,.357.27.645.419.645h4.386c.15,0,.353-.287.353-.645Z" transform="translate(-191.62 -246.08)" fill="#3c3f53"/>
+    <g id="Group_833" data-name="Group 833" transform="translate(11.905 636.702)">
+      <path id="Path_21875" data-name="Path 21875" d="M238.715,651.079l10.2,18.678h4.532V651.079Z" transform="translate(-231.727 -651.079)" fill="rgba(23,26,50,0.1)"/>
+      <path id="Path_21876" data-name="Path 21876" d="M150.422,651.079l10.2,18.678h5.152l-10.2-18.678Z" transform="translate(-150.422 -651.079)" fill="rgba(23,26,50,0.1)"/>
+    </g>
+  </g>
+</svg>

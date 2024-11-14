@@ -1,0 +1,61 @@
+input, textarea{
+    width: 100%;
+    background: transparent;
+    color: $white;
+    border: 1px solid $yellow!important;
+    padding: 10px!important;
+    margin: 10px;
+    border-radius: 10px!important;
+}
+input::placeholder, textarea::placeholder{
+    color: $white!important;
+}
+
+label input[type=checkbox] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+label .tick-box {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+label input[type=checkbox]:checked+.tick-box {
+    border: 2px solid $green;
+    background-color: $green;
+}
+
+label input[type=checkbox]:checked+.tick-box:after {
+    opacity: 1;
+}
+label .tick-box:after {
+    content: "";
+    position: absolute;
+    margin-top: 10px;
+    left: 50px;
+    width: 20px;
+    height: 10px;
+    border-bottom: 3px solid $blue;
+    border-left: 3px solid $blue;
+    -webkit-transform: rotate(-47deg);
+    -ms-transform: rotate(-47deg);
+    transform: rotate(-47deg);
+    opacity: 0;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}

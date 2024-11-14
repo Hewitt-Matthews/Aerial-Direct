@@ -1,0 +1,66 @@
+//Boostrap
+$font: 'Rubik', sans-serif;
+$header_font: 'Rubik', sans-serif;
+$body_text_colour: #fff;
+$header_text_colour: #fff;
+$body_link_colour: #fff;
+$font_size_h1: css-clamp(34px, calc(1vh + 1vw * 3.7), 46px);
+$font_size_h2: css-clamp(28px, calc(1vh + 1vw * 3.7), 36px);
+$font_size_h3: css-clamp(18px, calc(1vh + 1vw * 2), 24px);
+$font_size_h4: css-clamp(18px, calc(1vh + 1vw * 2), 22px);
+$font_size_body: css-clamp(16px, calc(1vh + 1vw * 1.1), 18px);
+
+
+$font_weight_regular: 400;
+$font_weight_medium: 500;
+$font_weight_bold: 700;
+
+
+//Screen sizes
+$mobile_width: 740px;
+$mobile: 740px;
+$xxl: 1600px;
+$xl: 1200px;
+$lg: 992px;
+$md: 768px;
+
+
+
+//Colours
+$white: rgb(255, 255, 255);
+$grey: #171A32;
+$yellow: #D1DA47;
+$green: #96E462;
+$dark: #262638;
+$black: #000;
+$null: #262638;
+$blue: #171A32;
+$dark-blue: #20233A;
+$light-grey: #F3F4F6;
+
+:root {
+	--white: #{$white};
+	--grey: #{$grey};
+	--yellow: #{$yellow};
+	--green: #{$green};
+	--dark: #{$dark};
+	--black: #{$black};
+	--dark-blue: #{$dark-blue};
+	--light-grey: #{$light-grey};
+	--null: #{$null};
+	--font: #{$font};
+	--h1: #{$font_size_h1};
+	--h2: #{$font_size_h2};
+	--h3: #{$font_size_h3};
+	--h4: #{$font_size_h4};
+	--p: #{$font_size_body};
+	--regular: 400;
+	--medium: 500;
+	--semibold: 600;
+	--bold: 700;
+
+	//Media queries here.
+	@media only screen and (max-width: 767px) {
+		--p: 16px;
+	}
+}
