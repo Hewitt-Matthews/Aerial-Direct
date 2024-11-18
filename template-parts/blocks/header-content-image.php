@@ -66,12 +66,12 @@ $bottom_padding = get_field('top_padding') ?: 100;
                                 </h1>
                                 <h3 class="weight-normal text-white">
                                     <br>
-                                    <p style="text-align: center">
+                                
                                         <?php echo wp_kses_post($slide['content_subtitle']); ?>
                                         <br>
                                         <?php echo wp_kses_post($slide['content_description']); ?>
                                         <br>
-                                    </p>
+                                
                                     
                                     <!-- Trustpilot Widget -->
                                     <div class="trustpilot-widget" 
