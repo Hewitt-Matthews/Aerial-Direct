@@ -52,8 +52,8 @@ $img_alt = get_field('content_image_alt');
                                     <h1 class="weight-normal header-heading header-badge <?php the_sub_field('title_color'); ?>">
                                         <?php echo $title; ?>
                                     </h1>
-                                    <h3 class="weight-normal <?php the_sub_field('subtitle_color'); ?>">
-                                        <?php echo nl2br($subtitle); ?>
+                                    <h3 class="weight-normal <?php the_sub_field('subtitle_color'); ?>" style='font-size: <?php the_sub_field('content_subtitle_ft'); ?>px!important;'>
+                                        <?php echo $subtitle; ?>
                                     </h3>
                                     <div style='font-size: <?php the_sub_field('content_description_ft'); ?>px!important;'>
                                         <p><?php echo $description; ?></p>
@@ -67,6 +67,17 @@ $img_alt = get_field('content_image_alt');
                                 </div>
                             <?php endif; ?>
                         </div>
+                        <?php if(!get_field('arrow_show')) :?>
+                    <div class="col-12 social-section order-2">
+                        <div class="d-flex align-items-center justify-content-center">
+
+                            <div class="col-4 text-center arrow-down-header">
+                                <button class="btn bg-transparent border-0 d-none d-lg-inline-flex"> <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-lime.svg" alt='arrow lime colour'></button>
+                            </div>
+
+                        </div>
+                    </div>
+                        <?php endif; ?>
                     </div>
                 </section>
             </div>
