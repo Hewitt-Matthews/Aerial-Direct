@@ -69,12 +69,14 @@ $img_alt = get_field('content_image_alt');
                         </div>
                         <?php if(!get_field('arrow_show')) :?>
                     <div class="col-12 social-section order-2">
-                        <div class="d-flex align-items-center justify-content-center">
-
+                        <div class="d-none d-lg-flex align-items-center justify-content-center">
                             <div class="col-4 text-center arrow-down-header">
-                                <button class="btn bg-transparent border-0 d-none d-lg-inline-flex"> <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-lime.svg" alt='arrow lime colour'></button>
+                                <button class="btn bg-transparent border-0"> 
+                                    <img loading="lazy" decoding="async" 
+                                        src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-lime.svg" 
+                                        alt='arrow lime colour'>
+                                </button>
                             </div>
-
                         </div>
                     </div>
                         <?php endif; ?>
@@ -115,5 +117,12 @@ $img_alt = get_field('content_image_alt');
 .image-content {
     width: 100%; /* Ensure the section takes full width */
     padding: 0; /* Remove padding to fit within the slide */
+}
+
+@media (max-width: 991px) {
+    .header-content-slider .swiper-slide .image-content .container-fluid .row {
+        display: flex !important;
+        flex-direction: column !important;
+    }    
 }
 </style>
