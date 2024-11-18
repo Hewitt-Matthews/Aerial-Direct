@@ -125,21 +125,24 @@ $(document).ready(function($){
         }
 
     });
-    // Initialize header slider
-    if($('.header-content-slider').length > 0) {
-        $('.header-content-slider').slick({
-            dots: false,
-            arrows: false,
-            infinite: true,
-            speed: 500,
-            fade: true,
-            cssEase: 'linear',
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 5000
-        });
-    }
+    // Initialize Swiper
+    var swiper = new Swiper('.header-content-slider', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+    });
     // add class when scrolltop > 0
     if($(window).scrollTop() > 0){
         $('.site-header').addClass('bg-white');
