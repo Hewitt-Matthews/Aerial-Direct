@@ -98,19 +98,6 @@ $bottom_padding = get_field('top_padding') ?: 100;
                             </div>
                         <?php endif; ?>
                     </div>
-                    <?php if(!get_field('arrow_show')) :?>
-                <div class="col-12 social-section order-2">
-                    <div class="d-none d-lg-flex align-items-center justify-content-center">
-                        <div class="col-4 text-center arrow-down-header">
-                            <button class="btn bg-transparent border-0"> 
-                                <img loading="lazy" decoding="async" 
-                                    src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-lime.svg" 
-                                    alt='arrow lime colour'>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                    <?php endif; ?>
                 </div>
             </div>
         <?php 
@@ -118,6 +105,20 @@ $bottom_padding = get_field('top_padding') ?: 100;
         endif; 
         ?>
     </div>
+
+    <?php if(!get_field('arrow_show')) :?>
+        <div class="col-12 social-section order-2">
+            <div class="d-flex align-items-center justify-content-center">
+                <div class="col-4 text-center arrow-down-header">
+                    <button class="btn bg-transparent border-0 d-none d-lg-inline-flex"> 
+                        <img loading="lazy" decoding="async" 
+                            src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-lime.svg" 
+                            alt='arrow lime colour'>
+                    </button>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
 </section>
 
 <style>
@@ -156,4 +157,24 @@ section.image-content.page-header.mobile-hide.swiper.header-content-slider {
     }    
 }
 
+section.image-content.page-header.mobile-hide.swiper.header-content-slider .social-section {
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+section.image-content.page-header.mobile-hide.swiper.header-content-slider .arrow-down-header img {
+    width: 40px;
+    height: auto;
+}
+
+section.image-content.page-header.mobile-hide.swiper.header-content-slider .arrow-down-header button {
+    transition: transform 0.3s ease;
+}
+
+section.image-content.page-header.mobile-hide.swiper.header-content-slider .arrow-down-header button:hover {
+    transform: translateY(5px);
+}
 </style>
