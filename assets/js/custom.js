@@ -128,12 +128,12 @@ $(document).ready(function($){
     // Initialize Swiper
     var swiper = new Swiper('.header-content-slider', {
         slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
+        spaceBetween: 30
+        // loop: true,
+        // autoplay: {
+        //     delay: 5000,
+        //     disableOnInteraction: false,
+        // },
     });
     // add class when scrolltop > 0
     if($(window).scrollTop() > 0){

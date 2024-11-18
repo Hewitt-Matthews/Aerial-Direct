@@ -6,89 +6,87 @@ if (get_field('glowing_border') === "yes") {
     $glowing = "";
 }
 $top_padding = get_field('top_padding') ?: 100;
-$bottom_padding = get_field('bottom_padding') ?: 100;
-$img_alt = get_field('content_image_alt');
+$bottom_padding = get_field('top_padding') ?: 100;
 ?>
 
-<div class="swiper-container header-content-slider">
+<section class="image-content page-header mobile-hide swiper header-content-slider" style='
+    padding-top: <?php the_field('pt'); ?>px!important; 
+    padding-bottom: <?php the_field('pb'); ?>px!important;
+    padding-right: <?php the_field('pr'); ?>px!important;
+    padding-left: <?php the_field('pl'); ?>px!important;
+'>
     <div class="swiper-wrapper">
-        <?php if(have_rows('slider_slides')): 
-            while(have_rows('slider_slides')): the_row();
-                $image = get_sub_field('content_image');
-                $title = get_sub_field('content_title');
-                $subtitle = get_sub_field('content_subtitle');
-                $description = get_sub_field('content_description');
-                $alignment = get_sub_field('content_alignment');
+        <?php 
+        $slides = get_field('slider_slides');
+        if($slides && is_array($slides)): 
+            foreach($slides as $slide): 
         ?>
             <div class="swiper-slide">
-                <section class="image-content page-header mobile-hide" style='
-                    padding-top: <?php the_field('pt'); ?>px!important; 
-                    padding-bottom: <?php the_field('pb'); ?>px!important;
-                    padding-right: <?php the_field('pr'); ?>px!important;
-                    padding-left: <?php the_field('pl'); ?>px!important;
-                '>
-                    <div class="container-fluid">
-                        <div class="row align-items-center margin-top-<?php echo $top_padding; ?> margin-bottom-<?php echo $bottom_padding; ?>">
-                            <?php if ($alignment === "left"): ?>
-                                <div class="col-12 col-lg-5 col-xl-5 padding-v-10 text-center padding-md-right-100 order-0">
-                                    <img loading="lazy" 
-                                        class="rounded header-image <?php the_sub_field('image_radius'); ?> <?php echo $glowing; ?>"
-                                        src="<?php echo esc_url($image); ?>" 
-                                        alt="<?php echo esc_attr($title); ?>"/>
-                                </div>
-                                <div class="col-12 col-lg-7 col-xl-7 order-lg-0 padding-v-10 order-1">
-                                    <h1 class="weight-normal header-heading header-badge <?php the_sub_field('title_color'); ?>">
-                                        <?php echo $title; ?>
-                                    </h1>
-                                    <h3 class="weight-normal <?php the_sub_field('subtitle_color'); ?>">
-                                        <?php echo $subtitle; ?>
-                                    </h3>
-                                    <div style='font-size: <?php the_sub_field('content_description_ft'); ?>px!important;'>
-                                        <p><?php echo $description; ?></p>
-                                    </div>
-                                </div>
-                            <?php else: ?>
-                                <div class="col-12 col-lg-7 col-xl-7 order-lg-0 padding-v-10 order-1">
-                                    <h1 class="weight-normal header-heading header-badge <?php the_sub_field('title_color'); ?>">
-                                        <?php echo $title; ?>
-                                    </h1>
-                                    <h3 class="weight-normal <?php the_sub_field('subtitle_color'); ?>" style='font-size: <?php the_sub_field('content_subtitle_ft'); ?>px!important;'>
-                                        <?php echo $subtitle; ?>
-                                    </h3>
-                                    <div style='font-size: <?php the_sub_field('content_description_ft'); ?>px!important;'>
-                                        <p><?php echo $description; ?></p>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-5 col-xl-5 padding-v-10 text-center padding-md-left-100 order-0">
-                                    <img loading="lazy" 
-                                        class="rounded header-image <?php the_sub_field('image_radius'); ?> <?php echo $glowing; ?>"
-                                        src="<?php echo esc_url($image); ?>" 
-                                        alt="<?php echo esc_attr($title); ?>"/>
-                                </div>
-                            <?php endif; ?>
-                        </div>
-                        <?php if(!get_field('arrow_show')) :?>
-                    <div class="col-12 social-section order-2">
-                        <div class="d-none d-lg-flex align-items-center justify-content-center">
-                            <div class="col-4 text-center arrow-down-header">
-                                <button class="btn bg-transparent border-0"> 
-                                    <img loading="lazy" decoding="async" 
-                                        src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-lime.svg" 
-                                        alt='arrow lime colour'>
-                                </button>
+                <div class="container-fluid">
+                    <div class="row align-items-center margin-top-<?php echo $top_padding; ?> margin-bottom-<?php echo $bottom_padding; ?>">
+                        <?php if ($slide['content_alignment'] === "left"): ?>
+                            <div class="col-12 col-lg-5 col-xl-5 padding-v-10 text-center padding-md-right-100 order-0">
+                                <img loading="lazy" 
+                                     class="rounded header-image <?php echo esc_attr($slide['image_radius']); ?> <?php echo $glowing; ?>"
+                                     src="<?php echo esc_url($slide['content_image']); ?>" 
+                                     alt="<?php echo esc_attr($slide['content_image_alt']); ?>"/>
                             </div>
-                        </div>
-                    </div>
+                            <div class="col-12 col-lg-7 col-xl-7 order-lg-0 padding-v-10 order-1">
+                                <h1 class="weight-normal header-heading header-badge <?php echo esc_attr($slide['title_color']); ?>">
+                                    <?php echo esc_html($slide['content_title']); ?>
+                                </h1>
+                                <h3 class="weight-normal <?php echo esc_attr($slide['subtitle_color']); ?>">
+                                    <?php echo wp_kses_post($slide['content_subtitle']); ?>
+                                </h3>
+                                <?php if (!empty($slide['content_description'])): ?>
+                                    <div style='font-size: <?php echo esc_attr($slide['content_description_ft']); ?>px!important;'>
+                                        <?php echo wp_kses_post($slide['content_description']); ?>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        <?php else: ?>
+                            <div class="col-12 col-lg-7 col-xl-7 order-lg-0 padding-v-10 order-1">
+                                <h1 class="weight-normal header-heading header-badge <?php echo esc_attr($slide['title_color']); ?>">
+                                    <?php echo esc_html($slide['content_title']); ?>
+                                </h1>
+                                <h3 class="weight-normal <?php echo esc_attr($slide['subtitle_color']); ?>">
+                                    <?php echo wp_kses_post($slide['content_subtitle']); ?>
+                                </h3>
+                                <?php if (!empty($slide['content_description'])): ?>
+                                    <div style='font-size: <?php echo esc_attr($slide['content_description_ft']); ?>px!important;'>
+                                        <?php echo wp_kses_post($slide['content_description']); ?>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                            <div class="col-12 col-lg-5 col-xl-5 padding-v-10 text-center padding-md-left-100 order-0">
+                                <img loading="lazy" 
+                                     class="rounded header-image <?php echo esc_attr($slide['image_radius']); ?> <?php echo $glowing; ?>"
+                                     src="<?php echo esc_url($slide['content_image']); ?>" 
+                                     alt="<?php echo esc_attr($slide['content_image_alt']); ?>"/>
+                            </div>
                         <?php endif; ?>
                     </div>
-                </section>
+                    <?php if(!get_field('arrow_show')) :?>
+                <div class="col-12 social-section order-2">
+                    <div class="d-none d-lg-flex align-items-center justify-content-center">
+                        <div class="col-4 text-center arrow-down-header">
+                            <button class="btn bg-transparent border-0"> 
+                                <img loading="lazy" decoding="async" 
+                                    src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-lime.svg" 
+                                    alt='arrow lime colour'>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                    <?php endif; ?>
+                </div>
             </div>
         <?php 
-            endwhile;
+            endforeach;
         endif; 
         ?>
     </div>
-</div>
+</section>
 
 <style>
 .image-content .row {
@@ -117,12 +115,5 @@ $img_alt = get_field('content_image_alt');
 .image-content {
     width: 100%; /* Ensure the section takes full width */
     padding: 0; /* Remove padding to fit within the slide */
-}
-
-@media (max-width: 991px) {
-    .header-content-slider .swiper-slide .image-content .container-fluid .row {
-        display: flex !important;
-        flex-direction: column !important;
-    }    
 }
 </style>
