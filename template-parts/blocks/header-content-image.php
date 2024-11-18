@@ -7,6 +7,7 @@ if (get_field('glowing_border') === "yes") {
 }
 $top_padding = get_field('top_padding') ?: 100;
 $bottom_padding = get_field('bottom_padding') ?: 100;
+$img_alt = get_field('content_image_alt');
 ?>
 
 <div class="swiper-container header-content-slider">
@@ -40,10 +41,10 @@ $bottom_padding = get_field('bottom_padding') ?: 100;
                                         <?php echo $title; ?>
                                     </h1>
                                     <h3 class="weight-normal <?php the_sub_field('subtitle_color'); ?>">
-                                        <?php echo nl2br($subtitle); ?>
+                                        <?php echo $subtitle; ?>
                                     </h3>
                                     <div style='font-size: <?php the_sub_field('content_description_ft'); ?>px!important;'>
-                                        <p><?php echo nl2br($description); ?></p>
+                                        <p><?php echo $description; ?></p>
                                     </div>
                                 </div>
                             <?php else: ?>
@@ -55,7 +56,7 @@ $bottom_padding = get_field('bottom_padding') ?: 100;
                                         <?php echo nl2br($subtitle); ?>
                                     </h3>
                                     <div style='font-size: <?php the_sub_field('content_description_ft'); ?>px!important;'>
-                                        <p><?php echo nl2br($description); ?></p>
+                                        <p><?php echo $description; ?></p>
                                     </div>
                                 </div>
                                 <div class="col-12 col-lg-5 col-xl-5 padding-v-10 text-center padding-md-left-100 order-0">
