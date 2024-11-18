@@ -74,11 +74,6 @@ $bottom_padding = get_field('bottom_padding') ?: 100;
         endif; 
         ?>
     </div>
-    <!-- Add Pagination -->
-    <div class="swiper-pagination"></div>
-    <!-- Add Navigation -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
 </div>
 
 <style>
