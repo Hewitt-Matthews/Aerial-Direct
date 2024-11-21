@@ -494,6 +494,16 @@ function my_acf_init_block_types()
             'mode'              => 'edit',
             'icon'              => 'admin-comments',
         ));
+        // register ACF block for request a quote to automatically go to the next step in the form
+        acf_register_block_type(array(
+            'name'              => 'request-a-quote-to-open-form-automatically-next-step',
+            'title'             => __('AD request a quote automatically go to next step'),
+            'description'       => __('A request a quote to automatically go to next step.'),
+            'render_template'   => 'template-parts/blocks/request-a-quote-steps-no-next-click.php',
+            'category'          => 'formatting',
+            'mode'              => 'edit',
+            'icon'              => 'admin-comments',
+        ));
        // register custom textbox
          acf_register_block_type(array(
             'name'              => 'custom-textbox',
